@@ -1,0 +1,64 @@
+\chapter{\trilingual{Conclusion}{Besluit}{Conclusion}}
+The variable $E$ is known as the energy\nomenclature{$E$}{Energy}. In \textbf{Options/Configure TeXStudio/Commando's} you have to modify \textbf{Makeglossaries} with \texttt{"c:\textbackslash Program Files\textbackslash MiKTeX 2.9\textbackslash miktex\textbackslash bin\textbackslash x64\textbackslash makeindex" \%.nlo -s nomencl.ist -o \%.nls} to run \textbf{Tools/Glossary}.
+\begin{equation}
+	E = mc^2
+\end{equation}
+A reference \cite{lauwens2010performance} ... Do not forget to run \textbf{Tools/Bibliography}.
+See tabel \ref{tabletest}
+\begin{lstlisting}[language=julia]
+#= This is a code sample for the Julia language
+(adapted from http://julialang.org) =#
+function mandel(z)
+c = z
+maxiter = 80
+for n = 1:maxiter
+	if abs(z) > 2
+		return n-1
+	end
+	z = z^2 + c
+end
+return maxiter
+end
+
+function helloworld()
+println("Hello, World!") # Bye bye, MATLAB!
+end
+
+function randmatstat(t)
+n = 5
+v = zeros(t)
+w = zeros(t)
+for i = 1:t
+	a = randn(n,n)
+	b = randn(n,n)
+	c = randn(n,n)
+	d = randn(n,n)
+	P = [a b c d]
+	Q = [a b; c d]
+	v[i] = trace((P.'*P)^4)
+	w[i] = trace((Q.'*Q)^4)
+end
+std(v)/mean(v), std(w)/mean(w)
+end
+\end{lstlisting}
+\begin{figure}
+	\centering
+	\includegraphics[width=3cm]{logo-rma}
+	\caption{The new RMA logo.}
+\end{figure}
+\begin{table}
+	\centering
+	\begin{tabular}{||c c c c||} 
+		\hline
+		Col1 & Col2 & Col2 & Col3 \\ [0.5ex] 
+		\hline\hline
+		1 & 6 & 87837 & 787 \\ 
+		2 & 7 & 78 & 5415 \\
+		3 & 545 & 778 & 7507 \\
+		4 & 545 & 18744 & 7560 \\
+		5 & 88 & 788 & 6344 \\ [1ex] 
+		\hline
+	\end{tabular}
+	\caption{Table to test captions and labels.}
+	\label{tabletest}
+\end{table}
